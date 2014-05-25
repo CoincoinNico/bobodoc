@@ -16,4 +16,6 @@
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
-//= require_tree .
+//= require drugstores
+//= require medicaments
+//= require pages
