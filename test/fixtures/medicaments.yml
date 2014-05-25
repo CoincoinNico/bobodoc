@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  form: MyString
+  composition: MyString
+  indication: MyString
+  dose: MyString
+  contraindication: MyString
+  price: 1
+
+two:
+  name: MyString
+  form: MyString
+  composition: MyString
+  indication: MyString
+  dose: MyString
+  contraindication: MyString
+  price: 1

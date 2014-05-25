@@ -1,0 +1,15 @@
+en:
+  drugstores:
+    title: "Listing drugstores"
+    name: "Name"
+    address: "Address"
+    phone: "Phone"
+    description: "Description"
+    medicament: "Medicament"
+    medicaments: "Medicaments"
+    new: "New Drugstore"
+    show: "Show"
+    edit: "Edit"
+    destroy: "Delete"
+    nearbys: "Drugstores nearby"
+    search_near: "Search near"

@@ -1,0 +1,54 @@
+
+<h1><%= t 'drugstores.title' %></h1>
+
+<%= form_tag drugstores_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag t('drugstores.search_near'), :name => nil %>
+  </p>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t 'drugstores.name' %></th>
+      <th><%= t 'drugstores.address' %></th>
+      <th><%= t 'drugstores.phone' %></th>
+      <th><%= t 'drugstores.description' %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @drugstores.each do |drugstore| %>
+      <tr>
+        <td><%= drugstore.name %></td>
+        <td><%= drugstore.address %></td>
+        <td><%= drugstore.phone %></td>
+        <td><%= drugstore.description %></td>
+        <td><%= link_to t('drugstores.show'), drugstore %></td>
+        <td><%= link_to t('drugstores.edit'), edit_drugstore_path(drugstore) %></td>
+        <td><%= link_to t('drugstores.destroy'), drugstore, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('drugstores.new'), new_drugstore_path %>
+
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+})
+</script>

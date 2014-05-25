@@ -1,0 +1,16 @@
+fr:
+  drugstores:
+    title: "Liste des pharmacies"
+    name: "Nom"
+    address: "Adresse"
+    phone: "Téléphone"
+    description: "Description"
+    medicament: "Médicament"
+    medicaments: "Médicaments"
+    new: "Nouvelle pharmacie"
+    show: "Voir"
+    edit: "Editer"
+    destroy: "Supprimer"
+    nearbys: "Pharmacies à proximité"
+    search_near: "Entrez une adresse"
+
