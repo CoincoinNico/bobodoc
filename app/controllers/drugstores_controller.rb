@@ -5,7 +5,7 @@ class DrugstoresController < ApplicationController
   # GET /drugstores.json
   def index
     if params[:search].present?
-      @drugstores = Drugstore.near(params[:search], 5)
+      @drugstores = Drugstore.near(params[:search], 3)
     else
       @drugstores = Drugstore.all
     end

@@ -15,6 +15,7 @@ gem 'gmaps4rails'
 gem 'bootstrap-sass'
 gem 'rails_12factor', group: :production
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'devise'
 
 ruby '2.1.1'
 # Use ActiveModel has_secure_password

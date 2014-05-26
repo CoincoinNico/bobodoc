@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140524195330) do
+ActiveRecord::Schema.define(version: 20140524194419) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -97,7 +97,6 @@ ActiveRecord::Schema.define(version: 20140524195330) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "latitude"
-    t.float    "longitude"
   end
 
   add_index "drugstores", ["Medicament_id"], name: "index_drugstores_on_Medicament_id", using: :btree
