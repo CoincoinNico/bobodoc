@@ -12,7 +12,7 @@ class DrugstoresController < ApplicationController
     @hash = Gmaps4rails.build_markers(@drugstores) do |drugstore, marker|
       marker.lat drugstore.latitude
       marker.lng drugstore.longitude
-      marker.json({ title: drugstore.name })
+      marker.json({ title: drugstore.name, id: drugstore.id })
       marker.infowindow render_to_string(:partial => "/drugstores/map_box", locals: {drugstore: drugstore})
     end
   end
@@ -20,6 +20,9 @@ class DrugstoresController < ApplicationController
   # GET /drugstores/1
   # GET /drugstores/1.json
   def show
+    respond_to do |format|
+      format.js
+    end
   end
 
   # GET /drugstores/new

@@ -1,5 +1,5 @@
 <div class="map_box">
-  <h3><%= drugstore.name %></h3>
+  <h1><%= drugstore.name %></h1>
   <p><%= drugstore.address %></p>
-  <%= link_to "See", drugstore  , class: "btn btn-warning" %>
+  <%= link_to "Details", drugstore_path(drugstore), id: "link_to_#{drugstore.id}"  , remote: true %>
 </div>
