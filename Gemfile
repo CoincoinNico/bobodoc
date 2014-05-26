@@ -16,6 +16,8 @@ gem 'bootstrap-sass'
 gem 'rails_12factor', group: :production
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
+gem 'acts-as-taggable-on'
+gem 'select2-rails'
 
 ruby '2.1.1'
 # Use ActiveModel has_secure_password

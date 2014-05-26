@@ -13,4 +13,6 @@ fr:
     destroy: "Supprimer"
     nearbys: "Pharmacies à proximité"
     search_near: "Entrez une adresse"
+  index:
+    title: "Votre médicament est-il trop cher?"
 

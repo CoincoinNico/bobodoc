@@ -13,3 +13,5 @@ en:
     destroy: "Delete"
     nearbys: "Drugstores nearby"
     search_near: "Search near"
+  index:
+    title: "Is your medicament too expensive?"

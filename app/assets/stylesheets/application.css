@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ .wrapper_landing{
+  width: 100%;
+ }
+ #text_field_tag {
+  width: 40%;
+ }
+ #submit_tag {
+  width: 20%;
+ }
