@@ -14,6 +14,7 @@ gem 'spring',        group: :development
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'bootstrap-sass'
+gem 'rails_12factor', group: :production
 
 ruby '2.1.1'
 # Use ActiveModel has_secure_password
