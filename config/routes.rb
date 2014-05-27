@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  # devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
+
   ActiveAdmin.routes(self)
   root 'pages#medicament_find'
 
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
 
   get '/' => 'medicaments#show'
   get 'medicament/find' => 'medicaments#show', as: :find_medicament
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

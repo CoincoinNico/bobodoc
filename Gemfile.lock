@@ -47,6 +47,7 @@ GEM
     acts-as-taggable-on (3.2.5)
       actionpack (>= 3, < 5)
       activerecord (>= 3, < 5)
+    addressable (2.3.6)
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (5.0.1.20140414130214)
@@ -110,6 +111,10 @@ GEM
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    koala (1.10.0rc)
+      addressable
+      faraday
+      multi_json
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -226,6 +231,7 @@ DEPENDENCIES
   gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails
+  koala (~> 1.10.0rc)
   omniauth-facebook
   pg
   quiet_assets
