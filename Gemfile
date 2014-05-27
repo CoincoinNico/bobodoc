@@ -23,6 +23,7 @@ gem 'binding_of_caller'
 gem 'quiet_assets', :group => :development
 #gérer les FB token si nécessaire
 gem 'figaro', '~> 1.0.0.rc1'
+gem 'omniauth-facebook'
 
 ruby '2.1.1'
 # Use ActiveModel has_secure_password
