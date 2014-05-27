@@ -1,39 +1,47 @@
 <p id="notice"><%= notice %></p>
+<div class="row-fluid">
+  <div class="col-md-8 col-xs-8">
+    <p>
+      <strong>Nom:</strong>
+      <%= @medicament.name %>
+    </p>
 
-<p>
-  <strong>Nom:</strong>
-  <%= @medicament.name %>
-</p>
+    <p>
+      <strong>Forme:</strong>
+      <%= @medicament.form %>
+    </p>
 
-<p>
-  <strong>Forme:</strong>
-  <%= @medicament.form %>
-</p>
+    <p>
+      <strong>Composition:</strong>
+      <%= @medicament.composition %>
+    </p>
 
-<p>
-  <strong>Composition:</strong>
-  <%= @medicament.composition %>
-</p>
+    <p>
+      <strong>Indication:</strong>
+      <%= @medicament.indication %>
+    </p>
 
-<p>
-  <strong>Indication:</strong>
-  <%= @medicament.indication %>
-</p>
+    <p>
+      <strong>Dose:</strong>
+      <%= @medicament.dose %>
+    </p>
 
-<p>
-  <strong>Dose:</strong>
-  <%= @medicament.dose %>
-</p>
+    <p>
+      <strong>Contraindication:</strong>
+      <%= @medicament.contraindication %>
+    </p>
 
-<p>
-  <strong>Contraindication:</strong>
-  <%= @medicament.contraindication %>
-</p>
+    <p>
+      <strong>Price:</strong>
+      <%= @medicament.price %>
+    </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @medicament.price %>
-</p>
-
-<%= link_to 'Edit', edit_medicament_path(@medicament) %> |
-<%= link_to 'Back', medicaments_path %>
+    <%= link_to 'Edit', edit_medicament_path(@medicament) %> |
+    <%= link_to 'Back', medicaments_path %>
+  </div>
+  <div class="col-md-5 col-xs-5">
+    <% for drugstore in @medicament.drugstores %>
+      <li><%= link_to drugstore.address, drugstore %> <!-- (<%= drugstore.distance.round(2) %> miles) --></li>
+    <% end %>
+  </div>
+</div>

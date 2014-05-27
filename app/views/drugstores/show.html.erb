@@ -24,8 +24,7 @@
   <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.fr/maps/ms?ie=UTF8&amp;msa=0&amp;msid=101686375028251599401.0004484f73bea6145ef6b&amp;ll=<%=@drugstore.latitude%>,<%=@drugstore.longitude%>&amp;spn=0,0&amp;output=embed&amp;s=AARTsJqhzeyiqiLGEqDCDC7ar_q7Q1nmAw"></iframe>
 </div>
 
-<%= link_to 'Editer', edit_drugstore_path(@drugstore) %> |
-<%= link_to 'Retour', drugstores_path %>
+<%= link_to t 'form.back', drugstores_path %>
 
 <strong><%= t 'drugstores.nearbys' %></strong>
 <ul>

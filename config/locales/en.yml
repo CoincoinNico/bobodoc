@@ -1,5 +1,9 @@
 en:
+  form:
+    error: "error"
+    back: "Back"
   drugstores:
+    header: "Is your drugstore too expensive? Find out here!"
     title: "Listing drugstores"
     name: "Name"
     address: "Address"
@@ -7,10 +11,17 @@ en:
     description: "Description"
     medicament: "Medicament"
     medicaments: "Medicaments"
-    new: "New Drugstore"
-    show: "Show"
-    edit: "Edit"
-    destroy: "Delete"
+    nearbys: "Drugstores nearby"
+    search_near: "Search near"
+    placeholder: "Which area is your drugstore located?"
+  medicaments:
+    medicaments: "Medicaments"
+    title: "Listing drugstores"
+    name: "Name"
+    address: "Address"
+    phone: "Phone"
+    description: "Description"
+    medicament: "Medicament"
     nearbys: "Drugstores nearby"
     search_near: "Search near"
   index:

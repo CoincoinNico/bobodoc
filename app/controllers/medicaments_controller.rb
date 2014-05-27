@@ -1,5 +1,6 @@
 class MedicamentsController < ApplicationController
   before_action :set_medicament, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:destroy]
 
   # GET /medicaments
   def index

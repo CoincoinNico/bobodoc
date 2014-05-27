@@ -18,6 +18,11 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'select2-rails'
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'quiet_assets', :group => :development
+#gérer les FB token si nécessaire
+gem 'figaro', '~> 1.0.0.rc1'
 
 ruby '2.1.1'
 # Use ActiveModel has_secure_password

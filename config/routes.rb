@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
+  devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root 'pages#index'
+  root 'pages#medicament_find'
 
   resources :drugstores
 
   resources :medicaments
+
+  get '/' => 'medicaments#show'
+  get 'medicament/find' => 'medicaments#show', as: :find_medicament
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
