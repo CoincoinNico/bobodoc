@@ -6,7 +6,9 @@
       <%= text_field_tag :search, params[:search],:placeholder => t('drugstores.placeholder'), :style => "width:100%;"%>
     </div>
     <div class="col-md-2 col-xs-2">
-      <%= submit_tag t('drugstores.search_near'), :name => nil, :style => "width:100%;"%>
+      <button type="submit" class="btn btn-primary" >
+        <%= t('drugstores.search_near') %>
+      </button>
     </div>
 <% end %>
 </div>

@@ -15,7 +15,20 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Pharmacies", drugstores_path %></li>
-        <li><%= link_to "Médicaments", find_medicament_path %></li>
+<!--         <li><%= link_to "Médicaments", find_medicament_path %></li>
+ -->        <li>
+          <% if user_signed_in? && current_user.provider == "facebook" %>
+            <%= image_tag current_user.picture_url %>
+          <% end %>
+        </li>
+        <li>
+          <% if user_signed_in? %>
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "Sign In", new_user_session_path %>
+          <% end %>
+        </li>
+      </div>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div>

@@ -20,7 +20,13 @@ class DrugstoresController < ApplicationController
   def show
     respond_to do |format|
       format.js
+      format.html
     end
+  end
+
+  def create
+    medoc = @drugstore.build.medicament(title: "onye")
+    medoc.stocks.where(drugstore_id: @drugstore.id).update_attribute(price: params[:price])
   end
 
   private

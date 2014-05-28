@@ -18,6 +18,8 @@
   <div><%= f.label :picture_url %><br />
     <%= f.text_field :picture_url %></div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <button type="submit" class="btn btn-primary" >
+    <%= "Sign up" %>
+  </button>
 <% end %>
 <%= render "devise/shared/links" %>

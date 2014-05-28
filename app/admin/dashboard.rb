@@ -10,12 +10,12 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
-    section "Pharmacies récemment ajoutées" do
-    table_for Drugstore.order("created_at desc").limit(5) do
-      column "Nom", :name
+    section "Médicaments récemment ajoutés" do
+    table_for Stock.order("created_at desc").limit(5) do
+      column "Nom", :medicament_id
       column "Créée le", :created_at
     end
-    strong { link_to "Voir toutes les pharmacies", admin_drugstores_path }
+    strong { link_to "Voir tous les médicaments ajoutés", admin_stocks_path }
     end
 
     # Here is an example of a simple dashboard with columns and panels.

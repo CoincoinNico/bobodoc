@@ -1,5 +1,5 @@
 class MedicamentsController < ApplicationController
-  before_action :set_medicament, only: [:show, :edit, :update, :destroy]
+  before_action :set_medicament, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, only: [:destroy]
 
   # GET /medicaments
@@ -9,12 +9,17 @@ class MedicamentsController < ApplicationController
 
   # GET /medicaments/1
   def show
+    if params[:search]
+      @medicament = Medicament.search(params[:search]).order("created_at DESC").first
+    else
+      @medicament = Medicament.find(params[:id])
+    end
   end
 
   # GET /medicaments/new
-  def new
-    @medicament = Medicament.new
-  end
+  # def new
+  #   @medicament = Medicament.new
+  # end
 
   # GET /medicaments/1/edit
   def edit
@@ -57,5 +62,9 @@ class MedicamentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def medicament_params
       params.require(:medicament).permit(:name, :form, :composition, :indication, :dose, :contraindication, :price)
+    end
+
+    # Returns the most probable medicament wanted
+    def search
     end
 end

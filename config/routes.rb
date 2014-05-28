@@ -1,16 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  # devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   ActiveAdmin.routes(self)
   root 'pages#medicament_find'
 
   resources :drugstores
-
   resources :medicaments
+  resources :stocks
 
-  get '/' => 'medicaments#show'
   get 'medicament/find' => 'medicaments#show', as: :find_medicament
 
 

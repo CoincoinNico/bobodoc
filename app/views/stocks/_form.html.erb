@@ -1,0 +1,34 @@
+<%= form_for(@stock) do |f| %>
+  <% if @stock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@stock.errors.count, "error") %> prohibited this stock from being saved:</h2>
+
+      <ul>
+      <% @stock.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :drugstore %><br>
+    <div class="dropdown">
+      <%= f.collection_select :drugstore_id, Drugstore.order(:name),:id,:name, {prompt: "Select a drugstore"}, {class: "form-control"} %>
+      <!--     , include_blank: true -->
+    </div>
+
+  </div>
+  <div class="field">
+    <%= f.label :medicament %><br>
+    <%= f.collection_select :medicament_id, Medicament.order(:name),:id,:name, {prompt: "Select a medicament"}, {class: "form-control"} %>
+      <!--     , include_blank: true -->
+    </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price, :placeholder => "Enter the price you noticed" %>
+  </div>
+  <button type="submit" class="btn btn-primary" >
+    <%= "Create Stock" %>
+  </button>
+<% end %>

@@ -7,6 +7,11 @@
     </p>
 
     <p>
+      <strong>Average price:</strong>
+      <%= @medicament.average_price %>
+    </p>
+
+    <p>
       <strong>Forme:</strong>
       <%= @medicament.form %>
     </p>
@@ -31,17 +36,13 @@
       <%= @medicament.contraindication %>
     </p>
 
-    <p>
-      <strong>Price:</strong>
-      <%= @medicament.price %>
-    </p>
-
     <%= link_to 'Edit', edit_medicament_path(@medicament) %> |
     <%= link_to 'Back', medicaments_path %>
   </div>
-  <div class="col-md-5 col-xs-5">
+  <div class="col-md-4 col-xs-4">
+    <p>Ce médicament est disponible dans les pharmacies suivantes:</p>
     <% for drugstore in @medicament.drugstores %>
-      <li><%= link_to drugstore.address, drugstore %> <!-- (<%= drugstore.distance.round(2) %> miles) --></li>
+      <li><%= link_to drugstore.address, drugstore %> <!-- ( drugstore.distance.round(2) miles) --></li>
     <% end %>
   </div>
 </div>
