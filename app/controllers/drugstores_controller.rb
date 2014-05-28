@@ -24,10 +24,10 @@ class DrugstoresController < ApplicationController
     end
   end
 
-  def create
-    medoc = @drugstore.build.medicament(title: "onye")
-    medoc.stocks.where(drugstore_id: @drugstore.id).update_attribute(price: params[:price])
-  end
+  # def create
+  #   medoc = @drugstore.build.medicament(title: "onye")
+  #   medoc.stocks.where(drugstore_id: @drugstore.id).update_attribute(price: params[:price])
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

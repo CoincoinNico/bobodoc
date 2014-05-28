@@ -48,10 +48,10 @@ class MedicamentsController < ApplicationController
   end
 
   # DELETE /medicaments/1
-  def destroy
-    @medicament.destroy
-    redirect_to medicaments_url, notice: 'Medicament was successfully destroyed.'
-  end
+  # def destroy
+  #   @medicament.destroy
+  #   redirect_to medicaments_url, notice: 'Medicament was successfully destroyed.'
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -17,16 +17,13 @@ class StocksController < ApplicationController
   end
 
   def create
-    @stock = Stock.new
-    @stock.drugstore_id = params[:stock][:drugstore_id]
-    @stock.medicament_id = params[:stock][:medicament_id]
-    @stock.price = params[:stock][:price]
+    stock = Stock.create(stock_params)
+    #Update la colonne cheapest du Médicament
+    medicament = stock.medicament
 
-    # @stock.medicament = Medicament.find(stock_params[:medicament])
-    # @stock.drugstore = Drugstore.find(stock_params[:drugstore])
 
-    if @stock.save
-      redirect_to @stock, notice: 'Stock was successfully created.'
+    if stock.save
+      redirect_to stock, notice: 'Stock was successfully created.'
     else
       render :new
     end
@@ -37,5 +34,10 @@ class StocksController < ApplicationController
     redirect_to stocks_url, notice: 'Stock was successfully destroyed.'
   end
 
-end
+  private
 
+  def stock_params
+    params.require(:stock).permit(:drugstore_id, :medicament_id, :position, :price)
+  end
+
+end
