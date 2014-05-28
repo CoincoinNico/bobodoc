@@ -61,7 +61,7 @@ class MedicamentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def medicament_params
-      params.require(:medicament).permit(:name, :form, :composition, :indication, :dose, :contraindication, :price)
+      params.require(:medicament).permit(:name, :form, :composition, :indication, :dose, :contraindication, :average_price)
     end
 
     # Returns the most probable medicament wanted
