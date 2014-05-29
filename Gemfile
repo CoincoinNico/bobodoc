@@ -18,6 +18,7 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'select2-rails'
+gem 'font-awesome-sass'
 
 group :development do
   # gem 'better_errors'
