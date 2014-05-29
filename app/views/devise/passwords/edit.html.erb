@@ -10,7 +10,9 @@
   <div><%= f.label :password_confirmation, "Confirm new password" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-  <div><%= f.submit "Change my password" %></div>
+  <button type="submit" class="btn btn-bobodoc" >
+    <%= "Change my password" %>
+  </button>
 <% end %>
 
 <%= render "devise/shared/links" %>

@@ -1,3 +1,17 @@
+// customizing my fonts
+h1 {
+    font-family: 'Lobster', Georgia, Times, serif;
+    font-size: 3em;
+    line-height: 2em;
+}
+ 
+p, li {
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1em;
+}
+
+// customizing my buttons
 .btn-bobodoc {
   	background-image: none;
 	background: #7ebd26;
@@ -19,7 +33,7 @@
 	background: #b9dc2f;
 	color: #fff;
 }
-
+// start of navbar
 .navbar-bobodoc .navbar-brand {
  	padding-top: 15px;
 	padding-bottom: 15px;
@@ -73,3 +87,4 @@
 .img-circle{
 	max-height: 19px;
 }
+// end of navbar
