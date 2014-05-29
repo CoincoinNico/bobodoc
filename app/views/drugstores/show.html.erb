@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
-<div class="row-fluid">
-  <div class="col-md-5 col-xs-5">
-    <p>
-      <strong><%= t 'drugstores.name' %></strong>
-      <%= @drugstore.name %>
-    </p>
-
+<div class="row row-table row-space-1 action-row">
+  <div class="col-9 col-top">
+    <h1 itemprop="name">
+      <div class="overflow" id="listing_name">
+        <%= @drugstore.name %>
+      </div>
+    </h1>
     <p>
       <strong><%= t 'drugstores.address' %></strong>
       <%= @drugstore.address %>

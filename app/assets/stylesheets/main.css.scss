@@ -1,0 +1,75 @@
+.btn-bobodoc {
+  	background-image: none;
+	background: #7ebd26;
+	border: none;
+	-webkit-box-shadow: 0px 1px 0px #ddd;
+	-moz-box-shadow: 0px 1px 0px #ddd;
+	box-shadow: 0px 1px 0px	;
+	color: #fff;
+	-webkit-border-radius: 0px;
+     -moz-border-radius: 0px;
+          border-radius: 0px;
+	font-weight:bold;
+	letter-spacing:1px;
+	text-transform: uppercase;
+	transition: all 0.2s ease-in-out 0s;
+	-webkit-transition: all 0.2s ease-in-out 0s;	
+}
+.btn-bobodoc:hover {
+	background: #b9dc2f;
+	color: #fff;
+}
+
+.navbar-bobodoc .navbar-brand {
+ 	padding-top: 15px;
+	padding-bottom: 15px;
+	text-decoration:none;
+	color: #7ebd26;
+	font-weight:bold;
+	letter-spacing:1px;
+}
+.navbar-bobodoc {
+	background: #fff;
+	filter: none !important;
+	box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+	-webkit-box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.navbar-bobodoc .nav {
+	float: right;
+}
+.navbar-bobodoc .nav li a {
+	background: none;
+	text-decoration:none !important;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	color: #777;
+	font-size: 13px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-weight: 600;
+}
+.navbar-bobodoc .nav li a:hover {
+	background: #7ebd26;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	color: #fff;
+}		
+.navbar-bobodoc .nav li.active a {
+	color: #7ebd26;
+	background: #fff;
+}
+.navbar-bobodoc .nav li.active a:hover {
+	color: #fff;
+	background: #7ebd26;
+}
+.dropdown{
+}
+.dropdown-toggle{
+}
+.img-circle{
+	max-height: 19px;
+}
