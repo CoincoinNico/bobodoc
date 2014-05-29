@@ -18,6 +18,8 @@ class DrugstoresController < ApplicationController
 
   # GET /drugstores/1
   def show
+    @comments = @drugstore.comments.order('created_at desc')
+    @comment = Comment.new
     respond_to do |format|
       format.js
       format.html

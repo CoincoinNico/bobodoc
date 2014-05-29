@@ -1,0 +1,9 @@
+<div class="comment-form">
+  <%= form_for [@commentable, Comment.new], :remote => true do |f| %>
+    <%= f.label :comment, :input_html => { :rows => "2" }, :label => false %>
+<!--     <= f.input :commentable_id, :as => :hidden, :value => @comment.commentable_id %>
+ -->    <!-- <= f.input :commentable_type, :as => :hidden, :value => @comment.commentable_type %> -->
+    <%= f.text_area :comment %>
+    <button type="submit" class="btn btn-primary" data-disable-with="Submitting..."  >Add a comment</button>
+  <% end %>
+</div>

@@ -18,14 +18,13 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'select2-rails'
-gem 'better_errors'
+# gem 'better_errors'
 gem 'binding_of_caller'
 gem 'quiet_assets', :group => :development
 #gérer les FB token si nécessaire
 gem 'figaro', '~> 1.0.0.rc1'
 gem 'omniauth-facebook'
 gem 'koala', '~> 1.10.0rc'
-gem 'acts_as_commentable_with_threading'
 ruby '2.1.1'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

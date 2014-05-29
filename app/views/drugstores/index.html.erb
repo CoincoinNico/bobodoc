@@ -41,7 +41,7 @@ $(function(){
     // Add event listener on marker click
     for (var i = 0; i <  markers.length; ++i) {
       var marker = markers[i];
-      google.maps.event.addListener(marker.serviceObject, 'click', onMarkerClick(marker, event));
+      google.maps.event.addListener(marker.serviceObject, 'click', onMarkerClick(marker));
     }
 
     function onMarkerClick(marker, event){

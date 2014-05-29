@@ -5,10 +5,15 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'pages#medicament_find'
 
-  resources :drugstores
-  resources :medicaments
-  resources :stocks
+  resources :drugstores do
+      resources :comments, only: [:create, :destroy]
+  end
+  resources :medicaments do
+      resources :comments, only: [:create, :destroy]
+  end
 
+  resources :stocks
+  # map.resources :comments, :path_prefix => '/:commentable_type/:commentable_id'
   get 'medicament/find' => 'medicaments#show', as: :find_medicament
 
 
