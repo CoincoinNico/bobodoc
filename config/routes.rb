@@ -4,13 +4,10 @@ Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
   root 'pages#medicament_find'
+  resources :comments, only: [:create, :destroy]
 
-  resources :drugstores do
-      resources :comments, only: [:create, :destroy]
-  end
-  resources :medicaments do
-      resources :comments, only: [:create, :destroy]
-  end
+  resources :drugstores
+  resources :medicaments
 
   resources :stocks
   # map.resources :comments, :path_prefix => '/:commentable_type/:commentable_id'
