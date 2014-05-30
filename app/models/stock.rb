@@ -14,7 +14,7 @@ class Stock < ActiveRecord::Base
 
   def update_highest
     if medicament.highest
-      medicament.highest = price if price < medicament.highest
+      medicament.highest = price if price > medicament.highest
     else
       medicament.highest = price
     end

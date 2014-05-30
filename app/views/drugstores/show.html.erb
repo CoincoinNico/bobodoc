@@ -4,7 +4,7 @@
       </div>
     </h1>
 <div class="row row-table row-space-1 action-row">
-  <div class="col-xs-6 col-top">
+  <div class="col-xs-7 col-top">
     <div class="sub_left">
       <p><%= @drugstore.address %></p>
       <p><%= @drugstore.phone %></p>
@@ -17,7 +17,7 @@
         </div>
     </div>
   </div>
-  <div class="col-xs-6 col-top">
+  <div class="col-xs-5 col-top">
     <h4><%= t 'drugstores.nearbys' %></h4>
     <ul  class="list-unstyled">
       <% for drugstore in @drugstore.nearbys(3) %>
@@ -27,29 +27,46 @@
   </div>
 <iframe width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.fr/maps/ms?ie=UTF8&amp;msa=0&amp;msid=101686375028251599401.0004484f73bea6145ef6b&amp;ll=<%=@drugstore.latitude%>,<%=@drugstore.longitude%>&amp;spn=0,0&amp;output=embed&amp;s=AARTsJqhzeyiqiLGEqDCDC7ar_q7Q1nmAw"></iframe>
 </div>
-<div class="col-xs-9 col-top">
-    <div class="sub_left">
-      <h3>Medicaments vendus</h3>
-      <% @drugstore.stocks.each do |stock|  %>
-      <span class="link_to-bobodoc-color">
-        <%= link_to stock.medicament.name, stock.medicament %>
-      </span>
-        <% if stock.price > stock.medicament.average_price %>
-          <span class="expensive"><i class="fa fa-arrow-up"></i>
-            <%= stock.price %>€ (+<%=stock.price - stock.medicament.average_price%>  €)
-          </span>
-        <% else %>
-          <span class="cheap"><i class="fa fa-arrow-down"></i>
-            <%= stock.price %>€ (-<%=-stock.price + stock.medicament.average_price%>  €)
-          </span>
+<div class="row">
+  <div class="col-xs-7">
+        <h3>Medicaments vendus</h3>
+        <% @drugstore.stocks.each do |stock|  %>
+        <span class="link_to-bobodoc-color">
+          <%= link_to stock.medicament.name, stock.medicament %>
+        </span>
+          <% if stock.price > stock.medicament.average_price %>
+            <span class="expensive"><i class="fa fa-arrow-up"></i>
+              <%= stock.price %>€ (+<%= (stock.price - stock.medicament.average_price).round(2) %>  €)
+            </span>
+          <% else %>
+            <span class="cheap"><i class="fa fa-arrow-down"></i>
+              <%= stock.price %>€ (-<%=(-stock.price + stock.medicament.average_price).round(2) %>  €)
+            </span>
+          <% end %>
         <% end %>
-      <% end %>
-  </div>
-  <div class="col-xs-3 col-top">
-    <div class="comments">
-      <h4>Comments</h4>
-      <%# render :partial => 'comments/form', locals: {commentable: @drugstore} %>
-      <%= render :partial => 'comments/comment', locals: {commentable: @drugstore} %>
+    </div>
+    <div class="col-xs-5">
+      <div class="comment" id="comment-<%# drugstore_comment.id %>">
+        <h4>Comments</h4>
+          <span class="link_to-bobodoc">
+            <%= link_to t('drugstores.add_comment'), new_drugstore_comment_path(drugstore_id: @drugstore), class: 'btn btn-bobodoc' %>
+          </span>
+
+          <% @drugstore.drugstore_comments.each do |comment| -%>
+            </hr>
+            <%= link_to "×", comment_path(comment), :method => :delete, :remote => true, :confirm => "Are you sure you want to remove this comment?", :disable_with => "×", :class => 'close' %>
+              <h4>
+                <small>
+                  <%= comment.user.user_name %>, le
+                  <%= comment.updated_at %>
+                </small>
+              </h4>
+              <p><%= comment.review %></p>
+          <% end %>
+      </div>
     </div>
   </div>
+      <%# render :partial => 'comments/form', locals: {commentable: @drugstore} %>
+      <%# render :partial => 'comments/comment', locals: {commentable: @drugstore} %>
+
 

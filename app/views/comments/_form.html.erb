@@ -1,8 +1,0 @@
-<div class="comment-form">
-  <%= form_for Comment.new, :remote => true do |f| %>
-    <%# f.label :comment %>
-    <%= hidden_field_tag :"comment[#{commentable.class.to_s.downcase}_id]", commentable.id %>
-    <%= f.text_area :comment %>
-    <button type="submit" class="btn btn-bobodoc-kuler" data-disable-with="Submitting..."  ><i class="fa fa-comment"></i> Add a comment</button>
-  <% end %>
-</div>

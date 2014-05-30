@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @drugstore_comment.title %>
+</p>
+
+<p>
+  <strong>Review:</strong>
+  <%= @drugstore_comment.review %>
+</p>
+
+<%= link_to 'Edit', edit_drugstore_comment_path(@drugstore_comment) %> |
+<%= link_to 'Back', drugstore_comments_path %>

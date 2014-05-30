@@ -1,0 +1,27 @@
+<h1>Listing drugstore_comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Review</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @drugstore_comments.each do |drugstore_comment| %>
+      <tr>
+        <td><%= drugstore_comment.title %></td>
+        <td><%= drugstore_comment.review %></td>
+        <td><%= link_to 'Show', drugstore_comment %></td>
+        <td><%= link_to 'Edit', edit_drugstore_comment_path(drugstore_comment) %></td>
+        <td><%= link_to 'Destroy', drugstore_comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Drugstore comment', new_drugstore_comment_path %>
