@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140529083610) do
+ActiveRecord::Schema.define(version: 20140530085259) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20140529083610) do
     t.string   "contraindication"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "average_price"
+    t.float    "average_price"
     t.float    "cheapest"
     t.float    "highest"
   end

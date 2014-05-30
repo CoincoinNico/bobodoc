@@ -18,7 +18,10 @@
   <div id="drugstore_info">
   </div>
   <% Drugstore.all.each do |drugstore| %>
-    <li><%= link_to drugstore.address, drugstore %></li>
+    <li class="no_bullet"><i class="fa fa-plus fa -2x"></i>
+      <%= link_to drugstore.name, drugstore %></br>
+      <%= drugstore.address %>
+    </li>
   <% end %>
 </ul> 
 </div>

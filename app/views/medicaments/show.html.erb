@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div class="row-fluid">
-  <div class="col-md-8 col-xs-8">
+  <div class="col-md-7 col-xs-7">
     <p>
       <strong>Nom:</strong>
       <%= @medicament.name %>
@@ -11,7 +11,7 @@
       <%= @medicament.average_price %>
     </p>
 
-    <p>
+ <!--    <p>
       <strong>Forme:</strong>
       <%= @medicament.form %>
     </p>
@@ -34,17 +34,17 @@
     <p>
       <strong>Contraindication:</strong>
       <%= @medicament.contraindication %>
-    </p>
+    </p> -->
 
     <button type="submit" class="btn btn-bobodoc" >
       <%= t('medicaments.add_reference') %>
     </button>  </div>
 
-  <div class="col-md-4 col-xs-4">
+  <div class="col-md-5 col-xs-5 no_decoration">
     <p>Ce médicament est disponible dans les pharmacies suivantes:</p>
     <% for drugstore in @medicament.drugstores %>
-      <li><%= link_to drugstore.address, drugstore %>
-        au prix de <%= Stock.find_by(drugstore_id: drugstore.id, medicament_id: @medicament.id).price %> €</li>
+      <li class="no_bullet"><%= link_to drugstore.address, drugstore %>
+        - <%= Stock.find_by(drugstore_id: drugstore.id, medicament_id: @medicament.id).price %> €</li>
 
     <% end %>
   </div>

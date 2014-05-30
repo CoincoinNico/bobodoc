@@ -1,6 +1,6 @@
 // customizing my fonts
 @media only screen and (max-width: 400px) {
-	body {font-size: 70%}
+	body {font-size: 80%}
 }
 
 h1 {
@@ -100,7 +100,7 @@ p {
 }
 .navbar-bobodoc .nav {
 	float: right;
-}
+}	 
 .navbar-bobodoc .nav li a {
 	background: none;
 	text-decoration:none !important;
@@ -147,10 +147,17 @@ p {
 	padding-top: 14%;
 }
 .sub_left {
-	width: 66%;
+	width: 50%;
     float: left;
 }
 .sub_right {
-	width: 34%;
+	width: 30%;
     float: right;
+}
+.no_bullet{
+	list-style-type: none;
+	margin: auto;
+}
+.no_bullet a{
+	text-decoration: none;
 }

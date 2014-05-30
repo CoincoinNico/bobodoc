@@ -1,11 +1,10 @@
-<p id="notice"><%= notice %></p>
- <h1 itemprop="name">
+<h1 itemprop="name">
       <div class="overflow" id="listing_name">
         <%= @drugstore.name %>
       </div>
     </h1>
 <div class="row row-table row-space-1 action-row">
-  <div class="col-xs-9 col-top">
+  <div class="col-xs-6 col-top">
     <div class="sub_left">
       <p><%= @drugstore.address %></p>
       <p><%= @drugstore.phone %></p>
@@ -18,11 +17,11 @@
       </button>
     </div>
   </div>
-  <div class="col-xs-3 col-top">
+  <div class="col-xs-6 col-top">
     <h4><%= t 'drugstores.nearbys' %></h4>
     <ul>
       <% for drugstore in @drugstore.nearbys(3) %>
-        <li><%= link_to drugstore.address, drugstore %> (<%= drugstore.distance.round(2) %> miles)</li>
+        <li class="no_bullet"><%= link_to drugstore.name, drugstore %> (<%= ((drugstore.distance)*1.609).round(1) %> km)</li>
       <% end %>
     </ul>
   </div>
@@ -31,8 +30,8 @@
 <div class="col-xs-9 col-top">
     <div class="sub_left">
       <h3>Medicaments vendus</h3>
-      <% @drugstore.medicaments.each do |medicament|  %>
-        <%= medicament.name %> <%# @drugstore.stocks.find(medicament.id).price %>
+      <% @drugstore.stocks.each do |stock|  %>
+        <%= stock.medicament.name %> <%= stock.price %>
       <% end %>
   </div>
   <div class="col-xs-3 col-top">
