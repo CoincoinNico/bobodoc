@@ -1,14 +1,9 @@
 <h1>Listing medicaments</h1>
 
-<table>
-  <thead>
+<table class="table table-hover">
+  <thead class="table-header">
     <tr>
       <th>Nom</th>
-     <!--  <th>Forme</th>
-      <th>Composition</th>
-      <th>Indication</th>
-      <th>Posologie</th>
-      <th>Contre-indications</th> -->
       <th>Prix moyen</th>
       <th>Prix le + bas</th>
       <th>Prix le + haut</th>
@@ -21,22 +16,13 @@
     <% @medicaments.each do |medicament| %>
       <tr>
         <td><%= medicament.name %></td>
-        <!-- <td><%= medicament.form %></td>
-        <td><%= medicament.composition %></td>
-        <td><%= medicament.indication %></td>
-        <td><%= medicament.dose %></td>
-        <td><%= medicament.contraindication %></td> -->
         <td><%= medicament.average_price %></td>
         <td><%= medicament.cheapest %></td>
         <td><%= medicament.highest %></td>
         <td><%= link_to 'Voir', medicament %></td>
-<!--         <td>< = link_to 'Editer', edit_medicament_path(medicament) %></td>
- -->  <!--       <td>< = link_to 'Supprimer', medicament, method: :delete, data: { confirm: 'Etes-vous sûr(e)?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'Ajouter un médicament', new_medicament_path %>

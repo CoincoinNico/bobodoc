@@ -36,9 +36,7 @@
       <%= @medicament.contraindication %>
     </p> -->
 
-    <button type="submit" class="btn btn-bobodoc" >
-      <%= t('medicaments.add_reference') %>
-    </button>  </div>
+      <%= button_to t('medicaments.add_reference'), new_stock, :method => 'get', class: "btn-bobodoc" %>
 
   <div class="col-md-5 col-xs-5 no_decoration">
     <p>Ce médicament est disponible dans les pharmacies suivantes:</p>

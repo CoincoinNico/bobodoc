@@ -12,6 +12,8 @@
  *= require active_admin
  *= require bootstrap_and_customization
  *= require font-awesome
+ *= require drugstores
+ *= require medicaments
  *= require main
  */
 
