@@ -2,7 +2,7 @@
 <div class="override_container" id="map"></div>
 <div class="map_relative"></div>
 <div class="col-md-4 col-xs-4">
-  <h3><%= 'Refine your search' %></h3>
+  <h4><%= 'Refine your search' %></h4>
   <%= form_tag drugstores_path, :method => :get do %>
     <%= text_field_tag :search, params[:search],:placeholder => t('drugstores.placeholder'), :style => "width:100%;"%>
     <button type="submit" class="btn btn-bobodoc" style="width:100%" >
@@ -10,13 +10,17 @@
     </button>
   <% end %>
   
-  <h3><%= 'Help us!' %></h3>
+  <h4><%= 'Help us!' %></h4>
   <p style="text-align:justify;">You can help us by finding your common health places and leaving comments!</p>
 </div>
 
 <div class="col-md-8 col-xs-8">
-    <div id="drugstore_info">
+  <div id="drugstore_info">
   </div>
+  <% Drugstore.all.each do |drugstore| %>
+    <li><%= link_to drugstore.address, drugstore %></li>
+  <% end %>
+</ul> 
 </div>
 
 <script type="text/javascript">

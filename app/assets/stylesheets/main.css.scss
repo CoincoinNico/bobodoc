@@ -1,22 +1,28 @@
 // customizing my fonts
-h1 {
-    font-family: 'Lobster', Georgia, Times, serif;
-    font-size: 3em;
-    line-height: 2em;
+@media only screen and (max-width: 400px) {
+	body {font-size: 70%}
 }
 
+h1 {
+    font-family: 'Lobster', Georgia, Times, serif;
+    font-size: 2em;
+    line-height: 2em;
+}
 h2 {
     font-family: 'Lobster', Georgia, Times, serif;
     font-size: 2em;
     line-height: 1em;
 }
-
 h3 {
     font-family: 'Lobster', Georgia, Times, serif;
     font-size: 1.5em;
     line-height: 1em;
+    margin-top: 0;
 }
-
+h4 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
  
 li {
     font-family: 'PT Sans', Helvetica, Arial, sans-serif;
@@ -25,7 +31,7 @@ li {
 }
 p {
     font-family: 'PT Sans', Helvetica, Arial, sans-serif;
-    font-size: 0.9em;
+    font-size: 1em;
     line-height: 1em;
 }
 
@@ -42,6 +48,7 @@ p {
      -moz-border-radius: 0px;
           border-radius: 0px;
 	font-weight:bold;
+	font-size: 1em;
 	letter-spacing:1px;
 	text-transform: uppercase;
 	transition: all 0.2s ease-in-out 0s;
@@ -51,13 +58,34 @@ p {
 	background: #b9dc2f;
 	color: #fff;
 }
+
+.btn-bobodoc-kuler {
+  	background-image: none;
+	background: #19a9e5;
+	border: none;
+	-webkit-box-shadow: 0px 1px 0px #ddd;
+	-moz-box-shadow: 0px 1px 0px #ddd;
+	box-shadow: 0px 1px 0px	;
+	color: #fff;
+	-webkit-border-radius: 0px;
+     -moz-border-radius: 0px;
+          border-radius: 0px;
+	font-weight:bold;
+	letter-spacing:1px;
+	text-transform: uppercase;
+	transition: all 0.2s ease-in-out 0s;
+	-webkit-transition: all 0.2s ease-in-out 0s;	
+}
+.btn-bobodoc-kuler:hover {
+	background: #72d0eb;
+	color: #fff;
+}
 // start of navbar
 .container-fluid{
 	padding-left: 5%;
 	padding-right: 5%;
 }
 .navbar-bobodoc .navbar-brand {
- 	padding-top: 10%;
 	text-decoration:none;
 	color: #7ebd26;
 	font-weight:bold;
@@ -117,4 +145,12 @@ p {
 }
 .map_relative{
 	padding-top: 14%;
+}
+.sub_left {
+	width: 66%;
+    float: left;
+}
+.sub_right {
+	width: 34%;
+    float: right;
 }
