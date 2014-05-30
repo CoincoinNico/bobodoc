@@ -10,7 +10,7 @@ class StocksController < ApplicationController
   end
 
   def new
-    @stock = Stock.new
+    @stock = Stock.new({medicament_id: params[:medicament_id], drugstore_id: params[:drugstore_id]})
   end
 
   def edit
@@ -23,7 +23,7 @@ class StocksController < ApplicationController
 
 
     if stock.save
-      redirect_to stock, notice: 'Stock was successfully created.'
+      redirect_to stock.medicament, notice: 'Stock was successfully created.'
     else
       render :new
     end

@@ -1,14 +1,11 @@
 <p id="notice"><%= notice %></p>
 <div class="row-fluid">
   <div class="col-md-7 col-xs-7">
-    <p>
-      <strong>Nom:</strong>
-      <%= @medicament.name %>
-    </p>
+    <p><%= @medicament.name %></p>
 
     <p>
       <strong>Average price:</strong>
-      <%= @medicament.average_price %>
+      <%= @medicament.average_price %> €
     </p>
 
  <!--    <p>
@@ -35,15 +32,18 @@
       <strong>Contraindication:</strong>
       <%= @medicament.contraindication %>
     </p> -->
-
-      <%= button_to t('medicaments.add_reference'), new_stock, :method => 'get', class: "btn-bobodoc" %>
-
+    <div class="link_to-bobodoc">
+      <%= link_to t('medicaments.add_reference'), new_stock_path(medicament_id: @medicament), class: 'btn btn-bobodoc' %>
+    </div>
+  </div>
   <div class="col-md-5 col-xs-5 no_decoration">
     <p>Ce médicament est disponible dans les pharmacies suivantes:</p>
+    <ul class="list-unstyled">
     <% for drugstore in @medicament.drugstores %>
-      <li class="no_bullet"><%= link_to drugstore.address, drugstore %>
-        - <%= Stock.find_by(drugstore_id: drugstore.id, medicament_id: @medicament.id).price %> €</li>
-
+      <li><%= link_to drugstore.address, drugstore %>
+        - <%= Stock.find_by(drugstore_id: drugstore.id, medicament_id: @medicament.id).price %> €
+      </li>
     <% end %>
+    </ul>
   </div>
 </div>

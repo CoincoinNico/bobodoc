@@ -12,16 +12,16 @@
       <p><%= @drugstore.description %></p>
     </div>
     <div class="sub-right">
-      <button type="submit" class="btn btn-bobodoc" >
-        <i class="fa fa-pencil-square-o"></i><%= t('medicaments.add_reference') %>
-      </button>
+        <div class="link_to-bobodoc">
+          <%= link_to t('drugstores.add_reference'), new_stock_path(drugstore_id: @drugstore), class: 'btn btn-bobodoc' %>
+        </div>
     </div>
   </div>
   <div class="col-xs-6 col-top">
     <h4><%= t 'drugstores.nearbys' %></h4>
-    <ul>
+    <ul  class="list-unstyled">
       <% for drugstore in @drugstore.nearbys(3) %>
-        <li class="no_bullet"><%= link_to drugstore.name, drugstore %> (<%= ((drugstore.distance)*1.609).round(1) %> km)</li>
+        <li><%= link_to drugstore.name, drugstore %> (<%= ((drugstore.distance)*1.609).round(1) %> km)</li>
       <% end %>
     </ul>
   </div>
@@ -31,13 +31,24 @@
     <div class="sub_left">
       <h3>Medicaments vendus</h3>
       <% @drugstore.stocks.each do |stock|  %>
-        <%= stock.medicament.name %> <%= stock.price %>
+      <span class="link_to-bobodoc-color">
+        <%= link_to stock.medicament.name, stock.medicament %>
+      </span>
+        <% if stock.price > stock.medicament.average_price %>
+          <span class="expensive"><i class="fa fa-arrow-up"></i>
+            <%= stock.price %>€ (+<%=stock.price - stock.medicament.average_price%>  €)
+          </span>
+        <% else %>
+          <span class="cheap"><i class="fa fa-arrow-down"></i>
+            <%= stock.price %>€ (-<%=-stock.price + stock.medicament.average_price%>  €)
+          </span>
+        <% end %>
       <% end %>
   </div>
   <div class="col-xs-3 col-top">
     <div class="comments">
       <h4>Comments</h4>
-      <%= render :partial => 'comments/form', locals: {commentable: @drugstore} %>
+      <%# render :partial => 'comments/form', locals: {commentable: @drugstore} %>
       <%= render :partial => 'comments/comment', locals: {commentable: @drugstore} %>
     </div>
   </div>

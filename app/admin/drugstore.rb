@@ -9,7 +9,6 @@ medicaments_attributes: [:id, :name, :form, :composition, :indication, :dose, :c
     column "Téléphone", :phone
     column "Description", :description
     column "Créée le", :created_at
-    column :medicaments, :as => :select, :multiple => :check_boxes, :input_html => { :class => "multiple-select" }
     actions
   end
 

@@ -14,7 +14,7 @@
   <div class="field">
     <%= f.label :drugstore %><br>
     <div class="dropdown">
-      <%= f.collection_select :drugstore_id, Drugstore.order(:name),:id,:name, {prompt: "Select a drugstore"}, {class: "form-control"} %>
+      <%= f.collection_select :drugstore_id, Drugstore.order(:name),:id,:name, {prompt: "Select a drugstore"}, {:default => '@medicament.name', class: "form-control"} %>
       <!--     , include_blank: true -->
     </div>
 
@@ -28,7 +28,7 @@
     <%= f.label :price %><br>
     <%= f.number_field :price, :placeholder => "Enter the price you noticed" %>
   </div>
-  <button type="submit" class="btn btn-primary" >
+  <button type="submit" class="btn btn-bobodoc-kuler" >
     <%= "Create Stock" %>
   </button>
 <% end %>
