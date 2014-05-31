@@ -31,9 +31,10 @@
   <div class="col-xs-7">
         <h3>Medicaments vendus</h3>
         <% @drugstore.stocks.each do |stock|  %>
-        <span class="link_to-bobodoc-color">
-          <%= link_to stock.medicament.name, stock.medicament %>
-        </span>
+        <div>
+          <span class="link_to-bobodoc-color">
+            <%= link_to stock.medicament.name, stock.medicament %>
+          </span>
           <% if stock.price > stock.medicament.average_price %>
             <span class="expensive"><i class="fa fa-arrow-up"></i>
               <%= stock.price %>€ (+<%= (stock.price - stock.medicament.average_price).round(2) %>  €)
@@ -43,6 +44,7 @@
               <%= stock.price %>€ (-<%=(-stock.price + stock.medicament.average_price).round(2) %>  €)
             </span>
           <% end %>
+        </div>
         <% end %>
     </div>
     <div class="col-xs-5">
