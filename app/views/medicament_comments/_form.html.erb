@@ -1,16 +1,16 @@
-<%= form_for DrugstoreComment.new do |f| %>
-  <% if @drugstore_comment.errors.any? %>
+<%= form_for MedicamentComment.new do |f| %>
+  <% if @medicament_comment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@drugstore_comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <h2><%= pluralize(@medicament_comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
       <ul>
-      <% @drugstore_comment.errors.full_messages.each do |message| %>
+      <% @medicament_comment.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-  <%= hidden_field_tag :"drugstore_comment[drugstore_id]", params[:drugstore_id] %>
+  <%= hidden_field_tag :"medicament_comment[medicament_id]", params[:medicament_id] %>
 
   <div class="field">
     <%= f.label :title %><br>
@@ -23,6 +23,6 @@
 
   <div class="actions">
 	<button type="submit" class="btn btn-bobodoc-kuler-2" >
-      <%= t('drugstores.comment') %>
+      <%= t('medicaments.comment') %>
     </button>
 <% end %>

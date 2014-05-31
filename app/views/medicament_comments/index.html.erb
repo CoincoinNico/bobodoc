@@ -1,0 +1,29 @@
+<h1>Listing medicament_comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Review</th>
+      <th>References</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medicament_comments.each do |medicament_comment| %>
+      <tr>
+        <td><%= medicament_comment.title %></td>
+        <td><%= medicament_comment.review %></td>
+        <td><%= medicament_comment.references %></td>
+        <td><%= link_to 'Show', medicament_comment %></td>
+        <td><%= link_to 'Edit', edit_medicament_comment_path(medicament_comment) %></td>
+        <td><%= link_to 'Destroy', medicament_comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Medicament comment', new_medicament_comment_path %>

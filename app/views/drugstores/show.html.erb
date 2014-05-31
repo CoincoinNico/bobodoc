@@ -49,7 +49,7 @@
       <div class="comment" id="comment-<%# drugstore_comment.id %>">
         <h4>Comments</h4>
           <span class="link_to-bobodoc">
-            <%= link_to t('drugstores.add_comment'), new_drugstore_comment_path(drugstore_id: @drugstore), class: 'btn btn-bobodoc' %>
+            <%= link_to t('drugstores.add_comment'), new_drugstore_comment_path(drugstore_id: @drugstore), class: 'btn btn-bobodoc-kuler-2' %>
           </span>
 
           <% @drugstore.drugstore_comments.each do |comment| -%>

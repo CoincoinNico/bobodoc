@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @medicament_comment.title %>
+</p>
+
+<p>
+  <strong>Review:</strong>
+  <%= @medicament_comment.review %>
+</p>
+
+<p>
+  <strong>References:</strong>
+  <%= @medicament_comment.references %>
+</p>
+
+<%= link_to 'Edit', edit_medicament_comment_path(@medicament_comment) %> |
+<%= link_to 'Back', medicament_comments_path %>

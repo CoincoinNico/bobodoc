@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :medicament_comments
+
   resources :drugstore_comments
   
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

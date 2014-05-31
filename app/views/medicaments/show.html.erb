@@ -51,9 +51,11 @@
             <%= stock_price %>€ (-<%=(-stock_price + @medicament.average_price).round(2) %>  €)
           </span>
         <% end %>
-
       </li>
     <% end %>
     </ul>
+    <span class="link_to-bobodoc">
+      <%= link_to t('medicaments.add_comment'), new_medicament_comment_path(medicament_id: @medicament), class: 'btn btn-bobodoc-kuler-2' %>
+    </span>
   </div>
 </div>

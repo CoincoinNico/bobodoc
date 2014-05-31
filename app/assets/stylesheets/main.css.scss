@@ -84,6 +84,27 @@ p {
 	background: #72d0eb;
 	color: #fff;
 }
+.btn-bobodoc-kuler-2 {
+  	background-image: none;
+	background: #E89B0C;
+	border: none;
+	-webkit-box-shadow: 0px 1px 0px #ddd;
+	-moz-box-shadow: 0px 1px 0px #ddd;
+	box-shadow: 0px 1px 0px	;
+	color: #fff;
+	-webkit-border-radius: 0px;
+     -moz-border-radius: 0px;
+          border-radius: 0px;
+	font-weight:bold;
+	letter-spacing:1px;
+	text-transform: uppercase;
+	transition: all 0.2s ease-in-out 0s;
+	-webkit-transition: all 0.2s ease-in-out 0s;	
+}
+.btn-bobodoc-kuler-2:hover {
+	background: #72d0eb;
+	color: #fff;
+}
 
 // link_to design
 .link_to-bobodoc a{
