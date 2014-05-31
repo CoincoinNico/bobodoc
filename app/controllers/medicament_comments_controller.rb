@@ -4,7 +4,7 @@ class MedicamentCommentsController < InheritedResources::Base
     @comment = MedicamentComment.create(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
-      redirect_to drugstore_path(params[:medicament_comment][:medicament_id])
+      redirect_to medicament_path(params[:medicament_comment][:medicament_id])
       # render :js => "alert('error saving comment');"
     end
       # render :partial => "comments/comment", :layout => false, :status => :created
