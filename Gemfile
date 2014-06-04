@@ -19,6 +19,7 @@ gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'select2-rails'
 gem 'font-awesome-sass'
+gem 'aws-sdk', '~> 1.20.0'
 
 group :development do
   gem 'better_errors'
