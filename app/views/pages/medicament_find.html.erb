@@ -3,7 +3,7 @@
 <%= form_tag find_medicament_path, :method => :get do %>
     <div class="col-md-5 col-xs-5">
       <!-- params[:search] permet d'afficher après reload la recherche précédente dans le champ -->
-      <%= text_field_tag :search, params[:search],:placeholder => "What is your medicament?", :style => "width:100%;"%>
+      <%= text_field_tag :search, params[:search], placeholder: "What is your medicament?", :style => "width:100%;"%>
     </div>
     <div class="col-md-2 col-xs-2">
       <button type="submit" class="btn btn-bobodoc" >

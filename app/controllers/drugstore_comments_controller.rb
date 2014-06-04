@@ -1,4 +1,6 @@
 class DrugstoreCommentsController < InheritedResources::Base
+  before_filter :authenticate_user!
+
   def create
     # Not implemented: check to see whether the user has permission to create a comment on this object
     @comment = DrugstoreComment.create(comment_params)

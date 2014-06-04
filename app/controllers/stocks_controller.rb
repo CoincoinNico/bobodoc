@@ -17,9 +17,15 @@ class StocksController < ApplicationController
   end
 
   def create
-    stock = Stock.create(stock_params)
+    stock = Stock.where(drugstore_id: stock_params[:drugstore_id], medicament_id: stock_params[:medicament_id]).take
+    if stock
+      stock.price = stock_params[:price]
+      stock.save
+    else
+      stock = Stock.create(stock_params)
     #Update la colonne cheapest du Médicament
-    medicament = stock.medicament
+        medicament = stock.medicament
+    end
 
 
     if stock.save

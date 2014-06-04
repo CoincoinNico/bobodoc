@@ -15,6 +15,7 @@ en:
     search_near: "Search near"
     placeholder: "Which area is your drugstore located?"
     add_reference: "I bought there !"
+    comment: "Comment"
   medicaments:
     medicaments: "Medicaments"
     title: "Listing drugstores"
@@ -27,4 +28,4 @@ en:
     search_near: "Search near"
     add_reference: "I bought it !"
   index:
-    title: "Is your medicament too expensive?"
+    title: "Find your drug - drugstore - or doctor !"
