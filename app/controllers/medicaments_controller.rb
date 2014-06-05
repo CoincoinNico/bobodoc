@@ -14,6 +14,12 @@ class MedicamentsController < ApplicationController
     else
       @medicament = Medicament.find(params[:id])
     end
+    @hash = Gmaps4rails.build_markers(@medicament.drugstores) do |drugstore, marker|
+      marker.lat drugstore.latitude
+      marker.lng drugstore.longitude
+      marker.json({ title: drugstore.name, id: drugstore.id })
+      marker.infowindow render_to_string(:partial => "/drugstores/map_box", locals: {drugstore: drugstore})
+    end
   end
 
   # GET /medicaments/new

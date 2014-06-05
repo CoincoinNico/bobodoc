@@ -38,7 +38,9 @@
   </div>
   <div class="col-md-6 col-xs-6 no_decoration">
     <p>Ce médicament est disponible dans les pharmacies suivantes:</p>
-    <ul class="list-unstyled">
+    <div class="override_container-2" id="map"></div>
+    <div class="map_relative"></div>
+    <ul class="list-unstyled map_medicament">
     <% for drugstore in @medicament.drugstores %>
       <li><%= link_to drugstore.address, drugstore %>
         <% stock_price = Stock.find_by(drugstore_id: drugstore.id, medicament_id: @medicament.id).price %> 
@@ -70,3 +72,38 @@
           <% end %>
   </div>
 </div>
+
+<script type="text/javascript">
+$(function(){
+
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {styles: mapStyle}, internal: {id: 'map'}}, function(){
+
+    // set marker infos from gmaps4rails ruby @hash built in controller
+    markers_json = <%=raw @hash.to_json %>;
+    markers = _.map(markers_json, function(marker_json){
+      marker = handler.addMarker(marker_json);
+      _.extend(marker, marker_json);
+      return marker;
+    });
+
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+
+    // Add event listener on marker click
+    for (var i = 0; i <  markers.length; ++i) {
+      var marker = markers[i];
+      google.maps.event.addListener(marker.serviceObject, 'click', onMarkerClick(marker));
+    }
+
+    function onMarkerClick(marker, event){
+      return function(event){
+        // On marker click, make AJAX request on "flats#show"
+        $.get("/drugstores/" + marker.id);
+      }
+    }
+
+  });
+
+})
+</script>
