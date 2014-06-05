@@ -12,7 +12,7 @@ en:
     medicament: "Medicament"
     medicaments: "Medicaments"
     nearbys: "Drugstores nearby"
-    search_near: "Search near"
+    search_near: "Search place"
     placeholder: "What is your address?"
     add_reference: "I bought there !"
     comment: "Comment"
@@ -25,7 +25,7 @@ en:
     description: "Description"
     medicament: "Medicament"
     nearbys: "Drugstores nearby"
-    search_near: "Search near"
+    search_near: "Search drug"
     add_reference: "I bought it !"
   index:
     title:
